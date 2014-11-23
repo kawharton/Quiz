@@ -37,29 +37,32 @@ var answerChosen=false;
 ];
 
 $(document).ready(function(){
-
-
-
+do {
 	addQuestion();
 	addChoices();
 
-	$('.choice-button').on('click', function() {
+	
+
+	//$('.choice-button').on('click', function() {
+	$('.choices').on('click', '.choice-button', function() {
 	document.getElementById('submit-button').disabled = false;
 });
 
 
- $("#submit-button").on('click', function() {
+ // $("#submit-button").on('click', function() {
+ $(".confirm").on('click','#submit-button', function() {
  $("#submit-button").hide();
  $("#next-button").show();
  checkAnswer();
 })
 
 
- $("#next-button").on('click', function() {
+ //$("#next-button").on('click', function() {
+ 	$(".confirm").on('click','#next-button', function() {
  $("#next-button").hide();
  $("#submit-button").show();
-	if (index<allQuestions.length)
- 	index++;
+	//if (index<allQuestions.length)
+ 	//index++;
 })
 
 //turn clicked button pink and add .selected
@@ -69,7 +72,10 @@ $('.choices').on('click','button', function() {
 	$(this).css('background-color', 'pink');
 	$(this).addClass('selected');
  	});
-})
+index++;
+}
+while (index<5);
+});
 
 
 
@@ -86,6 +92,13 @@ else {
 }
 };
 
+function clearText () {
+	$('h2').text('');
+	$('#button0').text('');
+	$('#button1').text('');
+	$('#button2').text('');
+	$('#button3').text('');
+}
 
 // 	var foundChoice = false; 
 // 	var i=0;
