@@ -1,0 +1,88 @@
+
+body{ 
+  background: url(../brain-neurons.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header {
+	text-align: center;
+	font-size: 7em;
+	color: aliceblue;
+	font-family: 'Corben', Georgia, Times, serif;
+	margin-top: 5%;
+
+}
+
+.question-panel {
+	background-color:rgba(196, 198, 232, 0.8);
+	width: 70%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 5%;
+	color: black;	
+}
+
+
+.question {
+	padding: 50px;
+	text-align: center;
+	font-size: 250%;
+}
+
+/*.radio-buttons{
+	margin-top: 25px;
+	padding-left: 50px;
+	padding-bottom: 50px;
+	font-size: 175%;
+
+}
+
+.radio {
+	padding-bottom: 10px;
+*/
+
+.selected {
+	background-color: pink;
+	
+}
+
+
+#submit-button{
+margin-bottom: 50px;
+background-color: aliceblue;
+}
+
+#next-button{
+margin-bottom: 50px;
+background-color: aliceblue;
+display: none;
+}
+
+
+.result {
+	margin: 50px auto;
+	text-align: center;
+	font-size: 2em;
+	display:none;
+
+}
+
+.incorrect {
+	color:red;	
+
+}
+
+.answer {
+	color:white;
+}
+
+.choices {
+	width: 30%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 50px;
+}
+
