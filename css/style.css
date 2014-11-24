@@ -9,10 +9,10 @@ body{
 
 .header {
 	text-align: center;
-	font-size: 7em;
+	font-size: 4em;
 	color: aliceblue;
 	font-family: 'Corben', Georgia, Times, serif;
-	margin-top: 5%;
+	margin-top: 2%;
 
 }
 
@@ -21,68 +21,66 @@ body{
 	width: 70%;
 	margin-left:auto;
 	margin-right: auto;
-	margin-top: 5%;
+	margin-top: 2%;
 	color: black;	
 }
 
 
 .question {
-	padding: 50px;
+	padding: 30px;
 	text-align: center;
-	font-size: 250%;
-}
-
-/*.radio-buttons{
-	margin-top: 25px;
-	padding-left: 50px;
-	padding-bottom: 50px;
 	font-size: 175%;
-
 }
-
-.radio {
-	padding-bottom: 10px;
-*/
-
-.selected {
-	background-color: pink;
-	
-}
-
 
 #submit-button{
-margin-bottom: 50px;
+margin-bottom: 20px;
 background-color: aliceblue;
 }
 
 #next-button{
-margin-bottom: 50px;
+margin-bottom: 20px;
 background-color: aliceblue;
 display: none;
 }
 
+#end-button{
+margin-bottom: 20px;
+background-color: aliceblue;
+display: none;
+}
 
 .result {
-	margin: 50px auto;
+	margin: 10px auto;
 	text-align: center;
-	font-size: 2em;
-	display:none;
+	font-size: 4em;
+	
+}
+
+#score {
+	color:white;
+	display:aliceblue;
 
 }
 
 .incorrect {
-	color:red;	
+	color:red;
+	display: none;	
+}
 
+.correct {
+	color:green;
+	display: none;	
 }
 
 .answer {
 	color:white;
+	/*display: none;*/
 }
 
 .choices {
 	width: 30%;
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 

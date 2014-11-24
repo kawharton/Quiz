@@ -2,6 +2,7 @@
 var index =0;
 var selectedAnswer;
 var answerChosen=false;
+var score = 0;
 
 	var allQuestions =  [
 	{
@@ -37,33 +38,54 @@ var answerChosen=false;
 ];
 
 $(document).ready(function(){
-do {
+
+	document.getElementById('end-button').disabled = true;
+
 	addQuestion();
 	addChoices();
 
-	
-
-	//$('.choice-button').on('click', function() {
 	$('.choices').on('click', '.choice-button', function() {
-	document.getElementById('submit-button').disabled = false;
+		document.getElementById('submit-button').disabled = false;
+
+	});
+
+
+ 	$(".confirm").on('click','#submit-button', function() {
+ 		$("#submit-button").hide();
+		$("#next-button").show();
+		$("#end-button").hide();
+		$(".choice-button").attr("disabled", true);
+ 		checkAnswer();
+	});
+
+
+//load new question
+ $(".confirm").on('click','#next-button', function() {
+	 $("#next-button").hide();
+	 $("#submit-button").show();
+	 $("#end-button").hide();
+		
+		if (index<allQuestions.length-1){
+	 		index++;
+		 	$('.choice-button').css('background-color', '');
+		 	$('.choice-button').removeClass('selected');
+		 	$(".feedback").hide();
+		 	addQuestion();
+		 	addChoices();
+		 	$(".choice-button").attr("disabled", false);
+ 		}
+
+ 		else if (index===4){
+ 			$('.choice-button').css('background-color', '');
+		 	$('.choice-button').removeClass('selected');
+		 	$(".feedback").hide();
+		 	$("#next-button").hide();
+  			$("#submit-button").hide();
+  			$("#end-button").show();
+  			$('#score').text("Your Score: " + score + " out of 5!").show();
+ 		}
+
 });
-
-
- // $("#submit-button").on('click', function() {
- $(".confirm").on('click','#submit-button', function() {
- $("#submit-button").hide();
- $("#next-button").show();
- checkAnswer();
-})
-
-
- //$("#next-button").on('click', function() {
- 	$(".confirm").on('click','#next-button', function() {
- $("#next-button").hide();
- $("#submit-button").show();
-	//if (index<allQuestions.length)
- 	//index++;
-})
 
 //turn clicked button pink and add .selected
 $('.choices').on('click','button', function() {
@@ -72,9 +94,6 @@ $('.choices').on('click','button', function() {
 	$(this).css('background-color', 'pink');
 	$(this).addClass('selected');
  	});
-index++;
-}
-while (index<5);
 });
 
 
@@ -85,43 +104,23 @@ function checkAnswer() {
 var correct = $(allQuestions[index].correctAnswer).attr('id');
 var userChoice = $('button.selected').attr('id');
 if (userChoice===correct) {
-	console.log('correct');
+	// console.log('correct');
+	$('.correct').show();
+	$('.incorrect').hide();
+	$('.score').hide();
+
+	score++;
 }
 else {
 	console.log('wrong');
+	$('.incorrect').show();
+	$('.correct').hide();
+	$('.score').hide();
 }
 };
 
-function clearText () {
-	$('h2').text('');
-	$('#button0').text('');
-	$('#button1').text('');
-	$('#button2').text('');
-	$('#button3').text('');
-}
 
-// 	var foundChoice = false; 
-// 	var i=0;
-// 	//var correct = $(allQuestions[index].correctAnswer);
-
-// do {
-// 	if ($(allQuestions[index].choices[i]).hasClass("selected")) {
-// 		selectedAnswer = i;
-// 		foundChoice = true; 
-// 		console.log(selectedAnswer);
-// 	}
-
-// 	else 
-// 		i++;	
-	
-// }
-
-// while (!foundChoice);
-
-
-
-
-//input new question
+//input new question and disable submit button
 function addQuestion () {
 	$('h2').text(allQuestions[index].question);
 	document.getElementById('submit-button').disabled = true;
