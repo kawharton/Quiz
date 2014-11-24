@@ -43,6 +43,12 @@ background-color: aliceblue;
 display: none;
 }
 
+#result-button{
+margin-bottom: 20px;
+background-color: aliceblue;
+display: none;
+}
+
 #end-button{
 margin-bottom: 20px;
 background-color: aliceblue;
@@ -74,7 +80,6 @@ display: none;
 
 .answer {
 	color:white;
-	/*display: none;*/
 }
 
 .choices {

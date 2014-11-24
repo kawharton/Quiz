@@ -1,10 +1,10 @@
 //var allQuestions=[];
-var index =0;
+var index = 0;
 var selectedAnswer;
-var answerChosen=false;
+var answerChosen = false;
 var score = 0;
 
-	var allQuestions =  [
+	var allQuestions = [
 	{
 		question: "Which brain region's primary role is to process emotion?",
 		choices: ["Amygdala", "Thalamus", "Cerebellum", "Substantia Nigra"],
@@ -50,12 +50,23 @@ $(document).ready(function(){
 	});
 
 
- 	$(".confirm").on('click','#submit-button', function() {
+ 	$('.confirm').on('click','#submit-button', function() {
+ 		if (index<allQuestions.length-1){
  		$("#submit-button").hide();
 		$("#next-button").show();
 		$("#end-button").hide();
 		$(".choice-button").attr("disabled", true);
  		checkAnswer();
+ 	}
+
+ 	else {
+ 		$("#submit-button").hide();
+		$("#next-button").hide();
+		$("#end-button").hide();
+		$("#result-button").show();
+		$(".choice-button").attr("disabled", true);
+ 		checkAnswer();
+ 	}
 	});
 
 
@@ -78,14 +89,18 @@ $(document).ready(function(){
  		else if (index===4){
  			$('.choice-button').css('background-color', '');
 		 	$('.choice-button').removeClass('selected');
-		 	$(".feedback").hide();
 		 	$("#next-button").hide();
   			$("#submit-button").hide();
-  			$("#end-button").show();
-  			$('#score').text("Your Score: " + score + " out of 5!").show();
  		}
-
 });
+
+//what happens when the result button is clicked
+ $(".confirm").on('click','#result-button', function() {
+ 		$("#end-button").show();
+  			$('#score').text("Your Score: " + score + " out of 5!").show();
+  			$(".feedback").hide();
+  			$("#result-button").hide();
+ });
 
 //turn clicked button pink and add .selected
 $('.choices').on('click','button', function() {
@@ -95,8 +110,6 @@ $('.choices').on('click','button', function() {
 	$(this).addClass('selected');
  	});
 });
-
-
 
 //compare selected answer to correct answer
 function checkAnswer() {
@@ -118,7 +131,6 @@ else {
 	$('.score').hide();
 }
 };
-
 
 //input new question and disable submit button
 function addQuestion () {
