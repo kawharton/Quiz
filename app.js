@@ -120,7 +120,7 @@ if (userChoice===correct) {
 	// console.log('correct');
 	$('.correct').show();
 	$('.incorrect').hide();
-	$('.score').hide();
+
 
 	score++;
 }
@@ -128,7 +128,7 @@ else {
 	console.log('wrong');
 	$('.incorrect').show();
 	$('.correct').hide();
-	$('.score').hide();
+	
 }
 };
 

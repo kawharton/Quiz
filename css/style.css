@@ -58,13 +58,13 @@ display: none;
 .result {
 	margin: 10px auto;
 	text-align: center;
-	font-size: 4em;
+	font-size: 3em;
 	
 }
 
 #score {
-	color:white;
-	display:aliceblue;
+	color:aliceblue;
+	font-family: 'Corben', Georgia, Times, serif;
 
 }
 
@@ -78,9 +78,6 @@ display: none;
 	display: none;	
 }
 
-.answer {
-	color:white;
-}
 
 .choices {
 	width: 30%;
