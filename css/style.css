@@ -1,21 +1,13 @@
 
-body{ 
-  background: url(../brain-neurons.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body { 
+	background: url(../brain-neurons.jpg) no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 
-.header {
-	text-align: center;
-	font-size: 4em;
-	color: aliceblue;
-	font-family: 'Corben', Georgia, Times, serif;
-	margin-top: 2%;
-
-}
-
+/*container for question and choices */
 .question-panel {
 	background-color:rgba(196, 198, 232, 0.8);
 	width: 70%;
@@ -26,48 +18,45 @@ body{
 }
 
 
+.header {
+	text-align: center;
+	font-size: 4em;
+	color: aliceblue;
+	font-family: 'Corben', Georgia, Times, serif;
+	margin-top: 2%;
+}
+
 .question {
 	padding: 30px;
 	text-align: center;
 	font-size: 175%;
 }
 
+.choices {
+	width: 30%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 30px;
+}
+
 #submit-button{
-margin-bottom: 20px;
-background-color: aliceblue;
+	margin-bottom: 20px;
+	background-color: aliceblue;
 }
 
-#next-button{
-margin-bottom: 20px;
-background-color: aliceblue;
-display: none;
+#next-button, #result-button, #end-button{
+	margin-bottom: 20px;
+	background-color: aliceblue;
+	display: none;
 }
 
-#result-button{
-margin-bottom: 20px;
-background-color: aliceblue;
-display: none;
-}
-
-#end-button{
-margin-bottom: 20px;
-background-color: aliceblue;
-display: none;
-}
+/*answer feedback*/
 
 .result {
 	margin: 10px auto;
 	text-align: center;
-	font-size: 3em;
-	
+	font-size: 3em;	
 }
-
-#score {
-	color:aliceblue;
-	font-family: 'Corben', Georgia, Times, serif;
-
-}
-
 .incorrect {
 	color:red;
 	display: none;	
@@ -78,11 +67,16 @@ display: none;
 	display: none;	
 }
 
+/*modal*/
+.modal-body {
+	background-color: aliceblue;
+	font-size: 3em;
+	font-family: 'Corben', Georgia, Times, serif;
+	text-align: center;
+}
 
-.choices {
-	width: 30%;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 30px;
+.modal-footer {
+	border-top: none;
+	background-color: aliceblue;
 }
 
